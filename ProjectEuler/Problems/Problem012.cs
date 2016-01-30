@@ -1,7 +1,7 @@
 
 public class Problem12
 {
-	public static int Solve()
+	public int Solve()
 	{
 		int result = 0;
 		int highestDividor = 0;
@@ -11,7 +11,7 @@ public class Problem12
 		{
 
 			triangleNumber = triangleNumber + i;
-			int dave = Problem12.CountDivisors(triangleNumber);
+			int dave = CountDivisors(triangleNumber);
 
 			if (dave > 500)
 			{
@@ -29,7 +29,7 @@ public class Problem12
 		return result;
 	}
 
-	private static int CountDivisors(int number)
+	private int CountDivisors(int number)
 	{
 
 		int result = 2;

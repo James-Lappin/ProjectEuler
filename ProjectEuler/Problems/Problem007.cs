@@ -3,7 +3,7 @@ public class Problem7
 {
 
 
-	public static long Solve()
+	public long Solve()
 	{
 
 		int count = 0;
@@ -23,7 +23,7 @@ public class Problem7
 	}
 
 
-	public static bool isPrime(long p)
+	public bool isPrime(long p)
 	{
 
 		for (long n = 2; n < p; n++)

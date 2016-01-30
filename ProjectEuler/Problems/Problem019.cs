@@ -15,7 +15,7 @@ public class Problem19
 	// d is the day of the month (1 to 31)
 	// m is the shifted month (March=1,...February=12)
 	// w is the day of week (0=Sunday,..6=Saturday)
-	public static int Solve()
+	public int Solve()
 	{
 		int result = 0;
 
@@ -43,7 +43,7 @@ public class Problem19
 		return result;
 	}
 
-	private static int findyValue(int year, int month)
+	private int findyValue(int year, int month)
 	{
 		int relativeYear = int.Parse(year.ToString().Substring(2));
 
@@ -52,19 +52,19 @@ public class Problem19
 		return relativeYear;
 	}
 
-	private static int findCenturyValue(int c)
+	private int findCenturyValue(int c)
 	{
 		double value = c / 4;
 		return (int)Math.Floor(value);
 	}
 
-	private static int findYearValue(int y)
+	private int findYearValue(int y)
 	{
 		double value = y / 4;
 		return (int)Math.Floor(value);
 	}
 
-	private static int findMonthValue(int m)
+	private int findMonthValue(int m)
 	{
 		if (m < 2) {
 			m = m + 11;

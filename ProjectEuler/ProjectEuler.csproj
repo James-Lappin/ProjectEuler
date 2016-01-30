@@ -5,12 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7B53F41C-6CF7-4BFB-AE3B-CD3C1D03523F}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProjectEuler</RootNamespace>
     <AssemblyName>ProjectEuler</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -40,34 +44,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Problem001.cs" />
-    <Compile Include="Problem010.cs" />
-    <Compile Include="Problem011.cs" />
-    <Compile Include="Problem012.cs" />
-    <Compile Include="Problem013.cs" />
-    <Compile Include="Problem014.cs" />
-    <Compile Include="Problem015.cs" />
-    <Compile Include="Problem016.cs" />
-    <Compile Include="Problem017.cs" />
-    <Compile Include="Problem018.cs" />
-    <Compile Include="Problem019.cs" />
-    <Compile Include="problem002.cs" />
-    <Compile Include="Problem020.cs" />
-    <Compile Include="Problem021.cs" />
-    <Compile Include="Problem022.cs" />
-    <Compile Include="Problem024.cs" />
-    <Compile Include="problem003.cs" />
-    <Compile Include="Problem004.cs" />
-    <Compile Include="Problem005.cs" />
-    <Compile Include="Problem006.cs" />
-    <Compile Include="Problem007.cs" />
-    <Compile Include="Problem008.cs" />
-    <Compile Include="Problem009.cs" />
+    <Compile Include="Helpers\IntergerExtensionMethods.cs" />
+    <Compile Include="Problems\Problem001.cs" />
+    <Compile Include="Problems\Problem010.cs" />
+    <Compile Include="Problems\Problem011.cs" />
+    <Compile Include="Problems\Problem012.cs" />
+    <Compile Include="Problems\Problem013.cs" />
+    <Compile Include="Problems\Problem014.cs" />
+    <Compile Include="Problems\Problem015.cs" />
+    <Compile Include="Problems\Problem016.cs" />
+    <Compile Include="Problems\Problem017.cs" />
+    <Compile Include="Problems\Problem018.cs" />
+    <Compile Include="Problems\Problem019.cs" />
+    <Compile Include="Problems\Problem002.cs" />
+    <Compile Include="Problems\Problem020.cs" />
+    <Compile Include="Problems\Problem021.cs" />
+    <Compile Include="Problems\Problem022.cs" />
+    <Compile Include="Problems\Problem024.cs" />
+    <Compile Include="Problems\Problem003.cs" />
+    <Compile Include="Problems\Problem004.cs" />
+    <Compile Include="Problems\Problem005.cs" />
+    <Compile Include="Problems\Problem006.cs" />
+    <Compile Include="Problems\Problem007.cs" />
+    <Compile Include="Problems\Problem008.cs" />
+    <Compile Include="Problems\Problem009.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="runner.cs" />
+    <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="names.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,14 +2,14 @@
 public class Problem13
 {
 
-	public static string Solve()
+	public string Solve()
 	{
 		//TODO
 		throw new System.Exception();
 	}
 
 	/*
-	public static string Solve(){
+	public string Solve(){
 		
 		string result = "";
 		int LengthOfEachNumber;
@@ -143,7 +143,7 @@ public class Problem13
 					anotherRemainderNumber ++;
 					String s = Integer.toString(anotherRemainderNumber);
 					
-					String newRemainder = remainder.substring(0,remainder.Length()-j-3) +  s + '0' + remainder.substring(remainder.Length()-j-1);
+					String newRemainder = remainder.substring(0,remainder.Length()-j-3) + s + '0' + remainder.substring(remainder.Length()-j-1);
 					remainder = newRemainder;
 				}
 				else{
@@ -151,7 +151,7 @@ public class Problem13
 					remainderNumber ++;
 					String s = Integer.toString(remainderNumber);
 					
-					String newRemainder = remainder.substring(0,remainder.Length()-j-2)+  s + remainder.substring(remainder.Length()-j-1);
+					String newRemainder = remainder.substring(0,remainder.Length()-j-2)+ s + remainder.substring(remainder.Length()-j-1);
 					remainder = newRemainder;
 				}
 			}
@@ -166,7 +166,7 @@ public class Problem13
 		return returnResult;
 	}
 	
-	private static int addStrings(char a, char b){
+	private int addStrings(char a, char b){
 		return Character.getNumericValue(a) + Character.getNumericValue(b);
 	}
 	*/

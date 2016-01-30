@@ -1,7 +1,7 @@
 
 public class Problem14 {
 
-	public static int Solve(){
+	public int Solve(){
 		
 		int result = 0;
 		int biggestCount = 0;

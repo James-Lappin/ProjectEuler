@@ -5,7 +5,7 @@ public class Problem6
 {
 
 
-	public static double Solve()
+	public double Solve()
 	{
 
 

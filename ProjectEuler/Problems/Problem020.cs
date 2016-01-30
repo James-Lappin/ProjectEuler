@@ -1,12 +1,12 @@
 public class Problem20
 {
-	public static string Solve()
+	public string Solve()
 	{
 		//TODO
 		throw new System.Exception();
 	}
 	/*
-	public static int Solve(){
+	public int Solve(){
 		int result = 0;
 		BigInteger hundredFactoral = new BigInteger("100");
 		

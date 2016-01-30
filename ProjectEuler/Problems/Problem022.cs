@@ -1,6 +1,6 @@
 public class Problem22
 {
-	public static int Solve()
+	public int Solve()
 	{
 
 		int result = 0;
@@ -18,23 +18,23 @@ public class Problem22
 		return result;
 	}
 
-	public static string readFile(string fileName)
+	public string readFile(string fileName)
 	{
 		throw new System.NotImplementedException("this fucked up y'all");
 		//BufferedReader br = new BufferedReader(new FileReader(fileName));
 		/*try {
-	        StringBuilder sb = new StringBuilder();
+	    StringBuilder sb = new StringBuilder();
 			string line = br.readLine();
 
-	        while (line != null) {
-	            sb.Append(line);
-	            sb.Append("\n");
-	            line = br.readLine();
-	        }
-	        return sb.toString();
-	    } finally {
-	        br.close();
-	    }*/
+	    while (line != null) {
+	      sb.Append(line);
+	      sb.Append("\n");
+	      line = br.readLine();
+	    }
+	    return sb.toString();
+	  } finally {
+	    br.close();
+	  }*/
 	}
 
 }

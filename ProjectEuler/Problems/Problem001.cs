@@ -2,7 +2,7 @@
 public class Problem1
 {
 
-	public static int solveProblem1()
+	public int solveProblem1()
 	{
 		int result = 0;
 		for (int i = 0; i < 1000; i++)

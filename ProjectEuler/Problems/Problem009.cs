@@ -3,7 +3,7 @@ using System;
 public class Problem9
 {
 
-	public static int Solve()
+	public int Solve()
 	{
 
 		for (int i = 2; i < 1000; i++)

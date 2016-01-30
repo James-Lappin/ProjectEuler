@@ -2,7 +2,7 @@
 public class problem3
 {
 
-	public static long solveProblem3()
+	public long solveProblem3()
 	{
 		var dave = 600851475143L;
 
@@ -21,7 +21,7 @@ public class problem3
 		return dave;
 	}
 
-	public static bool isPrime(long p)
+	public bool isPrime(long p)
 	{
 
 		for (long n = 2; n < p; n++)

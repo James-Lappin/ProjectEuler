@@ -2,7 +2,7 @@ public class Problem4
 {
 
 
-	public static int Solve()
+	public int Solve()
 	{
 		int result = 0;
 
@@ -23,7 +23,7 @@ public class Problem4
 	}
 
 
-	public static int reverseInt(int input)
+	public int reverseInt(int input)
 	{
 		string dave = input.ToString();
 

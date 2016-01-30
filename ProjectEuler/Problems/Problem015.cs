@@ -1,14 +1,14 @@
 public class Problem15
 {
-	public static string Solve()
+	public string Solve()
 	{
 		//TODO
 		throw new System.Exception();
 	}
 	/*
-	public static BigInteger Solve(){
+	public BigInteger Solve(){
 		
-		BigInteger numberator  = new BigInteger("1");
+		BigInteger numberator = new BigInteger("1");
 		BigInteger dinominator = new BigInteger("1");
 		
 		for(int i =21; i<41;i++){

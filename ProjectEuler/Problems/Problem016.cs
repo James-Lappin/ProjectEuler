@@ -2,13 +2,13 @@
 
 public class Problem16
 {
-	public static string Solve()
+	public string Solve()
 	{
 		//TODO
 		throw new System.Exception();
 	}
 	/*
-	public static int Solve()
+	public int Solve()
 	{
 		BigInteger twoToThePower = new BigInteger("2");
 

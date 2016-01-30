@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class Problem21
 {
-	public static int Solve()
+	public int Solve()
 	{
 		int result = 0;
 		List<int> dave = findDivisors(220);
@@ -11,7 +11,7 @@ public class Problem21
 		return result;
 	}
 
-	private static List<int> findDivisors(int number)
+	private List<int> findDivisors(int number)
 	{
 		List<int> result = new List<int>();
 

@@ -2,7 +2,7 @@
 public class Problem11
 {
 
-	public static int Solve()
+	public int Solve()
 	{
 
 		int result = 0;

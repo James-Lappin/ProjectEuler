@@ -1,7 +1,7 @@
 
 public class problem2 {
 
-	public static int solveProblem2() {
+	public int solveProblem2() {
 		
 		int firstNumber = 0;
 		int secondNumber = 1;
