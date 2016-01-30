@@ -1,14 +1,16 @@
 
-public class Problem13
+namespace ProjectEuler.Problems
 {
-
-	public string Solve()
+	public class Problem13
 	{
-		//TODO
-		throw new System.Exception();
-	}
 
-	/*
+		public string Solve()
+		{
+			//TODO
+			throw new System.Exception();
+		}
+
+		/*
 	public string Solve(){
 		
 		string result = "";
@@ -171,6 +173,7 @@ public class Problem13
 	}
 	*/
 
+	}
 }
 
 

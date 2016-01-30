@@ -1,4 +1,7 @@
-﻿public interface IProblem
+﻿namespace ProjectEuler.Interfaces
 {
-	string Solve();
+	public interface IProblem
+	{
+		string Solve();
+	}
 }

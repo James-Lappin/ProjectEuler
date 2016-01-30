@@ -1,57 +1,60 @@
-using ProjectEuler.Helpers;
 using System;
+using ProjectEuler.Helpers;
 
-public class Problem24
+namespace ProjectEuler.Problems
 {
-	//needed for problem24
-	//int[] digits = {0,1,2,3,4,5,6,7,8,9};
-
-	public string Solve(int[] digits, int n)
+	public class Problem24
 	{
-		if (n > digits.Length.Factorial())
-			throw new Exception("Requested number is too high");
+		//needed for problem24
+		//int[] digits = {0,1,2,3,4,5,6,7,8,9};
 
-		Array.Sort(digits);
-		return getPermutation(digits, n);
-	}
-
-	private string getPermutation(int[] digits, int n)
-	{
-
-		string permutation = "";
-		int currentPosition = 0;
-
-		while (digits.Length != 0)
+		public string Solve(int[] digits, int n)
 		{
-			int j = 0;
-			int max = (int)(digits.Length - 1).Factorial();
-			while (currentPosition + max < n)
+			if (n > digits.Length.Factorial())
+				throw new Exception("Requested number is too high");
+
+			Array.Sort(digits);
+			return getPermutation(digits, n);
+		}
+
+		private string getPermutation(int[] digits, int n)
+		{
+
+			string permutation = "";
+			int currentPosition = 0;
+
+			while (digits.Length != 0)
 			{
-				currentPosition += max;
-				j++;
+				int j = 0;
+				int max = (int)(digits.Length - 1).Factorial();
+				while (currentPosition + max < n)
+				{
+					currentPosition += max;
+					j++;
+				}
+
+				permutation += digits[j].ToString();
+				digits = removeIntFromArray(digits, j);
 			}
 
-			permutation += digits[j].ToString();
-			digits = removeIntFromArray(digits, j);
+			return permutation;
 		}
 
-		return permutation;
-	}
-
-	private int[] removeIntFromArray(int[] digits, int j)
-	{
-		int[] result = new int[digits.Length - 1];
-		int k = 0;
-
-		for (int i = 0; i < digits.Length; i++)
+		private int[] removeIntFromArray(int[] digits, int j)
 		{
+			int[] result = new int[digits.Length - 1];
+			int k = 0;
 
-			if (i == j) continue;
+			for (int i = 0; i < digits.Length; i++)
+			{
 
-			result[k] = digits[i];
-			k++;
+				if (i == j) continue;
+
+				result[k] = digits[i];
+				k++;
+			}
+
+			return result;
 		}
-
-		return result;
 	}
 }

@@ -1,13 +1,16 @@
 
-public class Problem5 {
+namespace ProjectEuler.Problems
+{
+	public class Problem5 {
 
-	public void Solve(){
+		public void Solve(){
 		
 		
-		//Ask Chloe
+			//Ask Chloe
 		
 		
+		}
+	
+	
 	}
-	
-	
 }

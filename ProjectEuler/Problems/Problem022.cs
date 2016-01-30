@@ -1,28 +1,30 @@
-public class Problem22
+namespace ProjectEuler.Problems
 {
-	public int Solve()
+	public class Problem22
 	{
-
-		int result = 0;
-
-		string nameFile = readFile("src/names.txt");
-		string[] nameArray = nameFile.Split(',');
-
-		for (int i = 0; i < nameArray.Length; i++)
+		public int Solve()
 		{
-			nameArray[i] = nameArray[i].Substring(1, nameArray[i].Length - 1);
+
+			int result = 0;
+
+			string nameFile = readFile("src/names.txt");
+			string[] nameArray = nameFile.Split(',');
+
+			for (int i = 0; i < nameArray.Length; i++)
+			{
+				nameArray[i] = nameArray[i].Substring(1, nameArray[i].Length - 1);
+			}
+
+			nameArray[0] = "COLIN";
+
+			return result;
 		}
 
-		nameArray[0] = "COLIN";
-
-		return result;
-	}
-
-	public string readFile(string fileName)
-	{
-		throw new System.NotImplementedException("this fucked up y'all");
-		//BufferedReader br = new BufferedReader(new FileReader(fileName));
-		/*try {
+		public string readFile(string fileName)
+		{
+			throw new System.NotImplementedException("this fucked up y'all");
+			//BufferedReader br = new BufferedReader(new FileReader(fileName));
+			/*try {
 	    StringBuilder sb = new StringBuilder();
 			string line = br.readLine();
 
@@ -35,8 +37,9 @@ public class Problem22
 	  } finally {
 	    br.close();
 	  }*/
-	}
+		}
 
+	}
 }
 
 

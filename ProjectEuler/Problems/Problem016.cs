@@ -1,13 +1,15 @@
 
 
-public class Problem16
+namespace ProjectEuler.Problems
 {
-	public string Solve()
+	public class Problem16
 	{
-		//TODO
-		throw new System.Exception();
-	}
-	/*
+		public string Solve()
+		{
+			//TODO
+			throw new System.Exception();
+		}
+		/*
 	public int Solve()
 	{
 		BigInteger twoToThePower = new BigInteger("2");
@@ -27,4 +29,5 @@ public class Problem16
 
 		return result;
 	}*/
+	}
 }

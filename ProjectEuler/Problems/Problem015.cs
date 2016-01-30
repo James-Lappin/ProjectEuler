@@ -1,11 +1,13 @@
-public class Problem15
+namespace ProjectEuler.Problems
 {
-	public string Solve()
+	public class Problem15
 	{
-		//TODO
-		throw new System.Exception();
-	}
-	/*
+		public string Solve()
+		{
+			//TODO
+			throw new System.Exception();
+		}
+		/*
 	public BigInteger Solve(){
 		
 		BigInteger numberator = new BigInteger("1");
@@ -27,4 +29,5 @@ public class Problem15
 		
 		return numberator.divide(dinominator);
 	}*/
+	}
 }

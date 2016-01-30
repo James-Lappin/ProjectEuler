@@ -1,29 +1,32 @@
 using System;
 
-public class Problem9
+namespace ProjectEuler.Problems
 {
-
-	public int Solve()
+	public class Problem9
 	{
 
-		for (int i = 2; i < 1000; i++)
+		public int Solve()
 		{
-			for (int j = 2; j < 1000; j++)
+
+			for (int i = 2; i < 1000; i++)
 			{
-				for (int k = 2; k < 1000; k++)
+				for (int j = 2; j < 1000; j++)
 				{
-					if ((Math.Pow(i, 2) + Math.Pow(j, 2) - Math.Pow(k, 2)) == 0)
+					for (int k = 2; k < 1000; k++)
 					{
-						if (i + j + k == 1000)
+						if ((Math.Pow(i, 2) + Math.Pow(j, 2) - Math.Pow(k, 2)) == 0)
 						{
-							Console.WriteLine("i = " + i + "\nj = " + j + "\nk = " + k);
-							return i * j * k;
+							if (i + j + k == 1000)
+							{
+								Console.WriteLine("i = " + i + "\nj = " + j + "\nk = " + k);
+								return i * j * k;
+							}
 						}
 					}
 				}
 			}
-		}
 
-		return 0;
+			return 0;
+		}
 	}
 }

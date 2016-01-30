@@ -1,35 +1,38 @@
-public class Problem4
+namespace ProjectEuler.Problems
 {
-
-
-	public int Solve()
+	public class Problem4
 	{
-		int result = 0;
 
-		for (int i = 999; i > 101; i--)
+
+		public int Solve()
 		{
-			for (int j = 999; j > 101; j--)
-			{
+			int result = 0;
 
-				int number = i * j;
-				if (number == reverseInt(number) && number > result)
+			for (int i = 999; i > 101; i--)
+			{
+				for (int j = 999; j > 101; j--)
 				{
-					result = number;
+
+					int number = i * j;
+					if (number == reverseInt(number) && number > result)
+					{
+						result = number;
+					}
 				}
 			}
+
+			return result;
 		}
 
-		return result;
+
+		public int reverseInt(int input)
+		{
+			string dave = input.ToString();
+
+
+			throw new System.NotImplementedException();
+			//return int.Parse(new StringBuilder(dave).Reverse().toString());
+		}
+
 	}
-
-
-	public int reverseInt(int input)
-	{
-		string dave = input.ToString();
-
-
-		throw new System.NotImplementedException();
-		//return int.Parse(new StringBuilder(dave).Reverse().toString());
-	}
-
 }

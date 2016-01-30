@@ -1,11 +1,13 @@
-public class Problem20
+namespace ProjectEuler.Problems
 {
-	public string Solve()
+	public class Problem20
 	{
-		//TODO
-		throw new System.Exception();
-	}
-	/*
+		public string Solve()
+		{
+			//TODO
+			throw new System.Exception();
+		}
+		/*
 	public int Solve(){
 		int result = 0;
 		BigInteger hundredFactoral = new BigInteger("100");
@@ -22,4 +24,5 @@ public class Problem20
 		}	
 		return result;
 	}*/
+	}
 }

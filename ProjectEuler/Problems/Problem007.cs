@@ -1,38 +1,41 @@
 
-public class Problem7
+namespace ProjectEuler.Problems
 {
-
-
-	public long Solve()
+	public class Problem7
 	{
 
-		int count = 0;
 
-		for (long i = 2; i < 9223372036854775807L; i++)
+		public long Solve()
 		{
-			if (isPrime(i))
+
+			int count = 0;
+
+			for (long i = 2; i < 9223372036854775807L; i++)
 			{
-				count++;
-				if (count == 10001)
+				if (isPrime(i))
 				{
-					return i;
+					count++;
+					if (count == 10001)
+					{
+						return i;
+					}
 				}
 			}
+			return 0;
 		}
-		return 0;
-	}
 
 
-	public bool isPrime(long p)
-	{
-
-		for (long n = 2; n < p; n++)
+		public bool isPrime(long p)
 		{
-			if (p % n == 0)
+
+			for (long n = 2; n < p; n++)
 			{
-				return false;
+				if (p % n == 0)
+				{
+					return false;
+				}
 			}
+			return true;
 		}
-		return true;
 	}
 }

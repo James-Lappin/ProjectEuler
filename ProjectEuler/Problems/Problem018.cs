@@ -1,12 +1,14 @@
 
-public class Problem18
+namespace ProjectEuler.Problems
 {
-
-	public int Solve()
+	public class Problem18
 	{
-		int result = 0;
 
-		int[][] dave = new int[][]{
+		public int Solve()
+		{
+			int result = 0;
+
+			int[][] dave = new int[][]{
 				new [] {75},
 				new [] {95, 64},
 				new [] {17, 47, 82},
@@ -22,41 +24,42 @@ public class Problem18
 				new [] {91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48},
 				new [] {63, 66, 04, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
 				new [] {04, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 04, 23}
-		};
+			};
 
-		int[] maxResult = new int[15];
+			int[] maxResult = new int[15];
 
 
-		maxResult[0] = dave[0][0];
+			maxResult[0] = dave[0][0];
 
-		for (int j = 1; j < dave.Length; j++)
-		{
-			int[] tempMaxResult = new int[15];
-			for (int i = 0; i < dave[j].Length; i++)
+			for (int j = 1; j < dave.Length; j++)
 			{
+				int[] tempMaxResult = new int[15];
+				for (int i = 0; i < dave[j].Length; i++)
+				{
 
-				if (i == 0) { tempMaxResult[i] = dave[j][i] + maxResult[i]; }
-				else {
-					int d1 = dave[j][i] + maxResult[i - 1];
-					int d2 = dave[j][i] + maxResult[i];
+					if (i == 0) { tempMaxResult[i] = dave[j][i] + maxResult[i]; }
+					else {
+						int d1 = dave[j][i] + maxResult[i - 1];
+						int d2 = dave[j][i] + maxResult[i];
 
-					if (d1 > d2) { tempMaxResult[i] = d1; }
-					else { tempMaxResult[i] = d2; }
+						if (d1 > d2) { tempMaxResult[i] = d1; }
+						else { tempMaxResult[i] = d2; }
+					}
 				}
+
+
+				maxResult = tempMaxResult;
+
 			}
 
 
-			maxResult = tempMaxResult;
+			//for (int i = 0; i < maxResult.Length; i++)
+			//{
+			//	System.out.println(maxResult[i]);
+			//}
 
+			return result;
 		}
 
-
-		//for (int i = 0; i < maxResult.Length; i++)
-		//{
-		//	System.out.println(maxResult[i]);
-		//}
-
-		return result;
 	}
-
 }

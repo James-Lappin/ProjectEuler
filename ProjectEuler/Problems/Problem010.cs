@@ -1,17 +1,20 @@
 using ProjectEuler.Helpers;
 
-public class Problem10
+namespace ProjectEuler.Problems
 {
-	public long Solve()
+	public class Problem10
 	{
-		long result = 0;
-		for (int i = 2; i < 2000000; i++)
+		public long Solve()
 		{
-			if (i.IsPrime())
+			long result = 0;
+			for (int i = 2; i < 2000000; i++)
 			{
-				result = result + i;
+				if (i.IsPrime())
+				{
+					result = result + i;
+				}
 			}
+			return result;
 		}
-		return result;
 	}
 }
