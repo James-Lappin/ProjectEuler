@@ -5,10 +5,8 @@ namespace ProjectEuler.Problems
 {
 	public class Problem017 : IProblem
 	{
-		private readonly string[] NumbersWrittenAsWords = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-															"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
-														};
-		private readonly string[] TensWrittenAsWords = { "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
+		private readonly int[] OneToNineteenLengths = { 0, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8 };
+		private readonly int[] TensWrittenAsWords = { 0, 0, 6, 6, 5, 5, 5, 7, 6, 6 };
 
 		private const int HundredWrittenLength = 7;
 		private const int ThousandWrittenLength = 8;
@@ -42,7 +40,7 @@ namespace ProjectEuler.Problems
 			var thousands = numberQueue.Dequeue();
 			if (thousands == 0) { return 0; }
 
-			var result = NumbersWrittenAsWords[thousands].Length + ThousandWrittenLength;
+			var result = OneToNineteenLengths[thousands] + ThousandWrittenLength;
 
 			if (ShouldAddAnd(numberQueue)) result += 3;
 
@@ -54,7 +52,7 @@ namespace ProjectEuler.Problems
 			var hundreds = numberQueue.Dequeue();
 			if (hundreds == 0) { return 0; }
 
-			var result = NumbersWrittenAsWords[hundreds].Length + HundredWrittenLength;
+			var result = OneToNineteenLengths[hundreds] + HundredWrittenLength;
 
 			if (ShouldAddAnd(numberQueue)) result += 3;
 
@@ -91,16 +89,16 @@ namespace ProjectEuler.Problems
 			{
 				var single = numberQueue.Dequeue();
 				var teens = (tens * 10) + single;
-				return NumbersWrittenAsWords[teens].Length;
+				return OneToNineteenLengths[teens];
 			}
 
-			return TensWrittenAsWords[tens].Length;
+			return TensWrittenAsWords[tens];
 		}
 
 		private int GetSinglesResult(Queue<int> numberQueue)
 		{
 			var single = numberQueue.Dequeue();
-			return NumbersWrittenAsWords[single].Length;
+			return OneToNineteenLengths[single];
 		}
 
 		public Queue<int> NumbersIn(int value)

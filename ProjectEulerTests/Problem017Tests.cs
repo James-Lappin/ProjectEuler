@@ -27,18 +27,33 @@ namespace ProjectEulerTests
 			Assert.That(actual, Is.EqualTo(19.ToString()));
 		}
 
+
 		[Test]
-		public void NineteenToTwentyOne()
+		public void TenToTwenty()
 		{
 			//arrange
-			_instance.StartingNumber = 19;
+			_instance.StartingNumber = 10;
+			_instance.FinishingNumber = 20;
+
+			//act
+			var actual = _instance.Solve();
+
+			//assert
+			Assert.That(actual, Is.EqualTo(76.ToString()));
+		}
+
+		[Test]
+		public void EighteenToTwentyOne()
+		{
+			//arrange
+			_instance.StartingNumber = 18;
 			_instance.FinishingNumber = 21;
 
 			//act
 			var actual = _instance.Solve();
 
 			//assert
-			Assert.That(actual, Is.EqualTo(23.ToString()));
+			Assert.That(actual, Is.EqualTo(31.ToString()));
 		}
 
 		[Test]
