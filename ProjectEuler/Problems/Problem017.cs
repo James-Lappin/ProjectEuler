@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace ProjectEuler.Problems
 {
+	//TODO a lot of similar code. Wonder if there's a design pattern to remove it?
 	public class Problem017 : IProblem
 	{
-		private readonly int[] OneToNineteenLengths = { 0, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8 };
-		private readonly int[] TensWrittenAsWords = { 0, 0, 6, 6, 5, 5, 5, 7, 6, 6 };
-
+		private readonly int[] _oneToNineteenLengths = { 0, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8 };
+		private readonly int[] _tensWrittenAsWords = { 0, 0, 6, 6, 5, 5, 5, 7, 6, 6 };
 		private const int HundredWrittenLength = 7;
 		private const int ThousandWrittenLength = 8;
 
@@ -22,25 +22,32 @@ namespace ProjectEuler.Problems
 			}
 
 			var result = 0;
-			for (int currentNumber = StartingNumber; currentNumber <= FinishingNumber; currentNumber++)
+			for (var currentNumber = StartingNumber; currentNumber <= FinishingNumber; currentNumber++)
 			{
-				var numberQueue = NumbersIn(currentNumber);
-
-				if (numberQueue.Count == 4) result += GetThousandsResult(numberQueue);
-				if (numberQueue.Count == 3) result += GetHundredsResult(numberQueue);
-				if (numberQueue.Count == 2) result += GetTensResult(numberQueue);
-				if (numberQueue.Count == 1) result += GetSinglesResult(numberQueue);
+				result += GetLengthOfNumber(currentNumber);
 			}
 
 			return result.ToString();
 		}
 
+		private int GetLengthOfNumber(int number)
+		{
+			var numberQueue = NumbersIn(number);
+
+			return GetThousandsResult(numberQueue)
+					+ GetHundredsResult(numberQueue)
+					+ GetTensResult(numberQueue)
+					+ GetSinglesResult(numberQueue);
+		}
+
 		private int GetThousandsResult(Queue<int> numberQueue)
 		{
+			if (numberQueue.Count != 4) return 0;
+
 			var thousands = numberQueue.Dequeue();
 			if (thousands == 0) { return 0; }
 
-			var result = OneToNineteenLengths[thousands] + ThousandWrittenLength;
+			var result = _oneToNineteenLengths[thousands] + ThousandWrittenLength;
 
 			if (ShouldAddAnd(numberQueue)) result += 3;
 
@@ -49,14 +56,46 @@ namespace ProjectEuler.Problems
 
 		private int GetHundredsResult(Queue<int> numberQueue)
 		{
+			if (numberQueue.Count != 3) return 0;
+
 			var hundreds = numberQueue.Dequeue();
 			if (hundreds == 0) { return 0; }
 
-			var result = OneToNineteenLengths[hundreds] + HundredWrittenLength;
+			var result = _oneToNineteenLengths[hundreds] + HundredWrittenLength;
 
 			if (ShouldAddAnd(numberQueue)) result += 3;
 
 			return result;
+		}
+
+		private int GetTensResult(Queue<int> numberQueue)
+		{
+			if (numberQueue.Count != 2) return 0;
+			var tens = numberQueue.Dequeue();
+
+			if (tens != 1) { return _tensWrittenAsWords[tens]; }
+
+			var single = numberQueue.Dequeue();
+			var teens = (tens * 10) + single;
+			return _oneToNineteenLengths[teens];
+		}
+
+		private int GetSinglesResult(Queue<int> numberQueue)
+		{
+			if (numberQueue.Count != 1) return 0;
+
+			var single = numberQueue.Dequeue();
+			return _oneToNineteenLengths[single];
+		}
+
+		private Queue<int> NumbersIn(int value)
+		{
+			if (value == 0) return new Queue<int>();
+
+			var numbers = NumbersIn(value / 10);
+			numbers.Enqueue(value % 10);
+
+			return numbers;
 		}
 
 		private bool ShouldAddAnd(Queue<int> numberQueue)
@@ -79,36 +118,6 @@ namespace ProjectEuler.Problems
 			}
 
 			return result;
-		}
-
-		private int GetTensResult(Queue<int> numberQueue)
-		{
-			var tens = numberQueue.Dequeue();
-
-			if (tens == 1)
-			{
-				var single = numberQueue.Dequeue();
-				var teens = (tens * 10) + single;
-				return OneToNineteenLengths[teens];
-			}
-
-			return TensWrittenAsWords[tens];
-		}
-
-		private int GetSinglesResult(Queue<int> numberQueue)
-		{
-			var single = numberQueue.Dequeue();
-			return OneToNineteenLengths[single];
-		}
-
-		public Queue<int> NumbersIn(int value)
-		{
-			if (value == 0) return new Queue<int>();
-
-			var numbers = NumbersIn(value / 10);
-			numbers.Enqueue(value % 10);
-
-			return numbers;
 		}
 	}
 }
