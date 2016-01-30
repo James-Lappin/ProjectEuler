@@ -1,16 +1,14 @@
-
-public class Problem1
+public class Problem001 : IProblem
 {
-
-	public int solveProblem1()
+	public string Solve()
 	{
-		int result = 0;
-		for (int i = 0; i < 1000; i++)
+		var result = 0;
+		for (var i = 0; i < 1000; i++)
 		{
 			if (i % 3 == 0) result = result + i;
 			else if (i % 5 == 0) result = result + i;
 		}
 
-		return result;
+		return result.ToString();
 	}
 }

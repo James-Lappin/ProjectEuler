@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\IntergerExtensionMethods.cs" />
+    <Compile Include="Interfaces\IProblem.cs" />
     <Compile Include="Problems\Problem001.cs" />
     <Compile Include="Problems\Problem010.cs" />
     <Compile Include="Problems\Problem011.cs" />
@@ -72,7 +74,7 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="names.txt" />
+    <Content Include="Resources\names.txt" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
