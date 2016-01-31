@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectEuler.Helpers
 {
 	public static class IntergerExtensionMethods
 	{
+		//maybe quicker to use Sieve of Eratosthenes and store?
 		public static bool IsPrime(this int value)
 		{
 			for (long i = 2; i < value; i++)
@@ -16,6 +19,25 @@ namespace ProjectEuler.Helpers
 			return true;
 		}
 
+		public static IEnumerable<int> FindDivisors(this int number)
+		{
+			var result = new HashSet<int>();
+			var limit = Math.Sqrt(number);
+
+			for (var i = 1; i <= limit; i++)
+			{
+				if (number % i != 0) continue;
+				result.Add(i);
+				result.Add(number / i);
+			}
+
+			return result;
+		}
+
+		public static IEnumerable<int> FindProperDivisors(this int number)
+		{
+			return number.FindDivisors().Where(x => x != number);
+		}
 
 		//Will only give accurate results to n less than 20
 		public static long Factorial(this int n)

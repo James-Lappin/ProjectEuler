@@ -1,9 +1,32 @@
+using ProjectEuler.Interfaces;
 using System;
 
 namespace ProjectEuler.Problems
 {
-	public class Problem19
+	public class Problem019 : IProblem
 	{
+		public DateTime FinishDate { get; set; } = new DateTime(2000, 12, 31);
+		public DateTime StartDate { get; set; } = new DateTime(1901, 1, 1);
+
+		//How many Sundays fell on the first of the month during the twentieth century(1 Jan 1901 to 31 Dec 2000)?
+		public string Solve()
+		{
+			return SolveEasy();
+		}
+
+		private string SolveEasy()
+		{
+			var result = 0;
+			var date = StartDate;
+			while (date < FinishDate)
+			{
+				if (date.DayOfWeek == DayOfWeek.Sunday) result++;
+
+				date = date.AddMonths(1);
+			}
+
+			return result.ToString();
+		}
 
 		// using Disparate variation from
 		// http://en.wikipedia.org/wiki/Determination_of_the_day_of_the_week
@@ -19,54 +42,57 @@ namespace ProjectEuler.Problems
 		// w is the day of week (0=Sunday,..6=Saturday)
 		public int SolveHard()
 		{
-			int result = 0;
+			var result = 0;
 
-			int dayOfTheMonth = 6;
+			var dayOfTheMonth = 6;
 
-			int i = 4;
-			int j = 1901;
+			var i = 4;
+			var j = 1901;
 
 			// for(int j=1901; j<2001; j++){
 			// for(int i = 0; i<12; i++){
 
 			// finds the term floor(2.6m - 0.2)
-			int month = findMonthValue(i);
-			int y = findyValue(j, i);
+			var month = FindMonthValue(i);
+			var y = FindyValue(j, i);
 
 			// finds the term floor(y/4)
-			int year = findYearValue(y);
+			var year = FindYearValue(y);
 
-			int c = int.Parse(j.ToString().Substring(0, 2));
-			int century = findCenturyValue(c);
+			var c = int.Parse(j.ToString().Substring(0, 2));
+			var century = FindCenturyValue(c);
 
-			int w = (dayOfTheMonth + month + y + year + century - (2 * c)) % 7;
-			if (w == 1) { result++; }
+			var w = (dayOfTheMonth + month + y + year + century - 2 * c) % 7;
+			if (w == 1)
+			{
+				result++;
+			}
 
 			return result;
 		}
 
-		private int findyValue(int year, int month)
+		private int FindyValue(int year, int month)
 		{
-			int relativeYear = int.Parse(year.ToString().Substring(2));
+			var relativeYear = int.Parse(year.ToString().Substring(2));
 
 			if (month == 0 || month == 1)
 				relativeYear = relativeYear - 1;
 			return relativeYear;
 		}
 
-		private int findCenturyValue(int c)
+		private int FindCenturyValue(int c)
 		{
 			decimal value = c / 4;
 			return (int)Math.Floor(value);
 		}
 
-		private int findYearValue(int y)
+		private int FindYearValue(int y)
 		{
 			double value = y / 4;
 			return (int)Math.Floor(value);
 		}
 
-		private int findMonthValue(int m)
+		private int FindMonthValue(int m)
 		{
 			if (m < 2)
 			{
@@ -76,20 +102,12 @@ namespace ProjectEuler.Problems
 			{
 				m = m - 1;
 			}
-			else {
+			else
+			{
 				throw new Exception("You gone fucked up now!");
 			}
 
-			return (int)Math.Floor((2.6 * m) - 0.2);
+			return (int)Math.Floor(2.6 * m - 0.2);
 		}
-
-
-		public string Solve()
-		{
-
-
-			throw new NotImplementedException();
-		}
-
 	}
 }

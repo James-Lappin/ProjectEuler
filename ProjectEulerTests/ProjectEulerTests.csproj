@@ -68,7 +68,10 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Problem017Tests.cs" />
+    <Compile Include="Helpers\IntegerExtensionMethodsTests.cs" />
+    <Compile Include="Problems\Problem019Tests.cs" />
+    <Compile Include="Problems\Problem017Tests.cs" />
+    <Compile Include="Problems\Problem021Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +83,7 @@
       <Name>ProjectEuler</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

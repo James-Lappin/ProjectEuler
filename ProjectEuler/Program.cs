@@ -1,16 +1,16 @@
-using System;
-using System.Diagnostics;
 using ProjectEuler.Interfaces;
 using ProjectEuler.Problems;
+using System;
+using System.Diagnostics;
 
 namespace ProjectEuler
 {
-	class Program
+	internal class Program
 	{
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
 			var program = new Program();
-			program.SolveProblem(new Problem017());
+			program.SolveProblem(new Problem021());
 
 			Console.WriteLine("Press any key to continue");
 			Console.ReadLine();
@@ -25,7 +25,7 @@ namespace ProjectEuler
 			stopwatch.Stop();
 
 			Console.WriteLine(result);
-			Console.WriteLine(string.Format("Program took {0}ms to solve", stopwatch.ElapsedMilliseconds));
+			Console.WriteLine("Program took {0}ms to solve", stopwatch.ElapsedMilliseconds);
 		}
 	}
 }

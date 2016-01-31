@@ -1,32 +1,40 @@
+using ProjectEuler.Helpers;
+using ProjectEuler.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectEuler.Problems
 {
-	public class Problem21
+	public class Problem021 : IProblem
 	{
-		public int Solve()
+		//what happens if value is 0?
+		public int StartValue { get; set; } = 1;
+		public int MaxValue { get; set; } = 10000;
+
+		public string Solve()
 		{
-			int result = 0;
-			List<int> dave = findDivisors(220);
+			var valuesSearched = new HashSet<int>();
+			var result = 0;
 
-			//TODO will this ever not return 0?
-			return result;
-		}
-
-		private List<int> findDivisors(int number)
-		{
-			List<int> result = new List<int>();
-
-			int limit = 0;
-			if (number % 2 == 0) limit = (number / 2) + 1;
-			else limit = (number + 1) / 2;
-
-			for (int i = 1; i < limit; i++)
+			for (var value = StartValue; value < MaxValue; value++)
 			{
-				if (number % i == 0) result.Add(i);
+				if (valuesSearched.Contains(value)) { continue; }
+
+				var pair = value.FindProperDivisors().Sum();
+				var pairsValue = pair.FindProperDivisors().Sum();
+
+				valuesSearched.Add(value);
+				valuesSearched.Add(pair);
+
+				if (pairsValue == pair || pairsValue != value) continue;
+
+				result += pair;
+				result += pairsValue;
 			}
 
-			return result;
+			return result.ToString();
 		}
+
+
 	}
 }
