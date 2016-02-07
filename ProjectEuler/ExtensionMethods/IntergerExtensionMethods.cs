@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectEuler.Helpers
+namespace ProjectEuler.ExtensionMethods
 {
 	public static class IntergerExtensionMethods
 	{

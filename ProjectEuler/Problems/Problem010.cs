@@ -1,4 +1,4 @@
-using ProjectEuler.Helpers;
+using ProjectEuler.ExtensionMethods;
 
 namespace ProjectEuler.Problems
 {

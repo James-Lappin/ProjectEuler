@@ -2,16 +2,10 @@
 using ProjectEuler.Helpers;
 using System.Linq;
 
-namespace ProjectEulerTests.Helpers
+namespace ProjectEulerTests.ExtensionMethods
 {
 	public class IntegerExtensionMethodsTests
 	{
-		[SetUp]
-		public void SetUp()
-		{
-
-		}
-
 		[TestCase(1, true)]
 		[TestCase(43, true)]
 		[TestCase(71, true)]

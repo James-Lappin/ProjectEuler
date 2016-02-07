@@ -1,8 +1,8 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using ProjectEuler.Problems;
-using System;
 
-namespace ProjectEulerTests
+namespace ProjectEulerTests.Problems
 {
 	public class Problem019Tests
 	{

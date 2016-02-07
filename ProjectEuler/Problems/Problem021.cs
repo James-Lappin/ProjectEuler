@@ -1,7 +1,7 @@
-using ProjectEuler.Helpers;
 using ProjectEuler.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectEuler.ExtensionMethods;
 
 namespace ProjectEuler.Problems
 {
@@ -11,6 +11,8 @@ namespace ProjectEuler.Problems
 		public int StartValue { get; set; } = 1;
 		public int MaxValue { get; set; } = 10000;
 
+		//What happens if one of the values is over the max value but a pair with another value?
+		//e.g. max value 225
 		public string Solve()
 		{
 			var valuesSearched = new HashSet<int>();
