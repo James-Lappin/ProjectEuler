@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using ProjectEuler.Problems;
 
-namespace ProjectEulerTests
+namespace ProjectEulerTests.Problems
 {
 	public class Problem017Tests
 	{

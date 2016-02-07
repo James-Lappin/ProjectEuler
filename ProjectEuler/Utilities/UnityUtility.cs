@@ -10,7 +10,7 @@ namespace ProjectEuler.Utilities
 		{
 			var container = new UnityContainer();
 			container.RegisterType<IFileUtility, FileUtility>();
-			container.RegisterType<IProblem, Problem022>();
+			container.RegisterType<IProblem, Problem023>();
 			return container;
 		}
 	}

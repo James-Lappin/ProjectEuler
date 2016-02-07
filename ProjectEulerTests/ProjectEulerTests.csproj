@@ -76,6 +76,7 @@
     <Compile Include="Problems\Problem017Tests.cs" />
     <Compile Include="Problems\Problem021Tests.cs" />
     <Compile Include="Problems\Problem022Tests.cs" />
+    <Compile Include="Problems\Problem023Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtensionMethods\StringExtensionMethodsTests.cs" />
   </ItemGroup>

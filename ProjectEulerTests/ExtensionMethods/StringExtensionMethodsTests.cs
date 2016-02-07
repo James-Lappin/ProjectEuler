@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using ProjectEuler.ExtensionMethods;
 using ProjectEuler.Utilities;
 
-namespace ProjectEulerTests.Utilities
+namespace ProjectEulerTests.ExtensionMethods
 {
 	public class StringExtensionMethodsTests
 	{

@@ -28,7 +28,9 @@ namespace ProjectEuler.ExtensionMethods
 			{
 				if (number % i != 0) continue;
 				result.Add(i);
-				result.Add(number / i);
+
+				var reflectedDivisor = number / i;
+				if (reflectedDivisor != i) { result.Add(reflectedDivisor); }
 			}
 
 			return result;
@@ -45,12 +47,17 @@ namespace ProjectEuler.ExtensionMethods
 			if (n > 20) throw new Exception("Value of n is to big for this function, will have to make it a BigInteger instead of long");
 
 			long result = 1;
-			for (int i = 1; i <= n; i++)
+			for (var i = 1; i <= n; i++)
 			{
 				result *= i;
 			}
 
 			return result;
+		}
+
+		public static bool IsAbundantNumber(this int number)
+		{
+			return number.FindProperDivisors().Sum() > number;
 		}
 	}
 }

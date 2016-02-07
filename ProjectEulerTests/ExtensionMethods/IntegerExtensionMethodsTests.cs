@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using ProjectEuler.Helpers;
+using ProjectEuler.ExtensionMethods;
 using System.Linq;
 
 namespace ProjectEulerTests.ExtensionMethods
@@ -27,7 +27,9 @@ namespace ProjectEulerTests.ExtensionMethods
 			Assert.That(actual, Is.EqualTo(expected));
 		}
 
+		[TestCase(1, 1)]
 		[TestCase(12, 1, 2, 3, 4, 6, 12)]
+		[TestCase(25, 1, 5, 25)]
 		[TestCase(100, 1, 2, 4, 5, 10, 20, 25, 50, 100)]
 		[TestCase(220, 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110, 220)]
 		public void FindDivisors(int underTest, params int[] divisors)
@@ -41,18 +43,33 @@ namespace ProjectEulerTests.ExtensionMethods
 			Assert.That(actual.TrueForAll(divisors.Contains));
 		}
 
-		[TestCase(12, 1, 2, 3, 4, 6, 12)]
-		[TestCase(100, 1, 2, 4, 5, 10, 20, 25, 50, 100)]
-		[TestCase(220, 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110, 220)]
+		[TestCase(1)]
+		[TestCase(12, 1, 2, 3, 4, 6)]
+		[TestCase(25, 1, 5)]
+		[TestCase(100, 1, 2, 4, 5, 10, 20, 25, 50)]
+		[TestCase(220, 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110)]
 		public void FindProperDivisors(int underTest, params int[] divisors)
 		{
 			//arrange
 			//act
-			var actual = underTest.FindDivisors().ToList();
+			var actual = underTest.FindProperDivisors().ToList();
 
 			//assert
 			Assert.That(actual, Has.Count.EqualTo(divisors.Count()));
 			Assert.That(actual.TrueForAll(divisors.Contains));
+		}
+
+		[TestCase(16, false)]
+		[TestCase(12, true)]
+		[TestCase(1, false)]
+		public void IsAbundantNumber(int number, bool expected)
+		{
+			//arrange
+			//act
+			var actual = number.IsAbundantNumber();
+
+			//assert
+			Assert.That(actual, Is.EqualTo(expected));
 		}
 	}
 }
