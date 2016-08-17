@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
-using ProjectEuler.Helpers;
+using ProjectEuler.ExtensionMethods;
 using System.Linq;
 
 namespace ProjectEulerTests.ExtensionMethods
 {
-	public class IntegerExtensionMethodsTests
+    public class IntegerExtensionMethodsTests
 	{
 		[TestCase(1, true)]
 		[TestCase(43, true)]

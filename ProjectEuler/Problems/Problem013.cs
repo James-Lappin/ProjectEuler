@@ -1,23 +1,20 @@
-
 namespace ProjectEuler.Problems
 {
-	public class Problem13
-	{
+    public class Problem13
+    {
+        public string Solve()
+        {
+            //TODO
+            throw new System.Exception();
+        }
 
-		public string Solve()
-		{
-			//TODO
-			throw new System.Exception();
-		}
-
-		/*
+        /*
 	public string Solve(){
-		
 		string result = "";
 		int LengthOfEachNumber;
 		int numberOfNumbersToAdd;
-		
-		string[] dave = 
+
+		string[] dave =
 		{"37107287533902102798797998220837590246510135740250",
 		"46376937677490009712648124896970078050417018260538",
 		"74324986199524741059474233309513058123726617309629",
@@ -119,32 +116,31 @@ namespace ProjectEuler.Problems
 		"20849603980134001723930671666823555245252804609722",
 		"53503534226472524250874054075591789781264330331690",
 		};
-		
+
 		string remainder = "0000000000000000000000000000000000000000000000000000000";
-		
+
 		LengthOfEachNumber = dave[0].Length;
 		numberOfNumbersToAdd = dave.Length;
-		
-		
+
 		for(int j = 0; j<LengthOfEachNumber; j++){
 		//Add the the first number and the remainder
 		int rowResult = addStrings(dave[0].CharAt(LengthOfEachNumber-j-1),remainder.charAt(remainder.Length()-j-1));
-		
+
 		//Add every other number
 		for(int i = 1; i<numberOfNumbersToAdd; i++){
 			rowResult = rowResult + Character.getNumericValue(dave[i].charAt(LengthOfEachNumber-j-1));
 			if(rowResult>9){
 				rowResult = rowResult-10;
 				int remainderNumber = Character.getNumericValue(remainder.charAt(remainder.Length()-j-2));
-				
+
 				if(remainderNumber==9){
 					//get character at Length -3 and add one to it, reset number at -2 to 0
-					
+
 					int anotherRemainderNumber = Character.getNumericValue(remainder.charAt(remainder.Length()-j-3));
-					
+
 					anotherRemainderNumber ++;
 					String s = Integer.toString(anotherRemainderNumber);
-					
+
 					String newRemainder = remainder.substring(0,remainder.Length()-j-3) + s + '0' + remainder.substring(remainder.Length()-j-1);
 					remainder = newRemainder;
 				}
@@ -152,41 +148,23 @@ namespace ProjectEuler.Problems
 					//Add one to number
 					remainderNumber ++;
 					String s = Integer.toString(remainderNumber);
-					
+
 					String newRemainder = remainder.substring(0,remainder.Length()-j-2)+ s + remainder.substring(remainder.Length()-j-1);
 					remainder = newRemainder;
 				}
 			}
 		}
-		
+
 		result = rowResult + result;
-		
 		}
-		
-		
+
 		String returnResult = remainder.substring(0, remainder.Length() - result.Length()) + result;
 		return returnResult;
 	}
-	
+
 	private int addStrings(char a, char b){
 		return Character.getNumericValue(a) + Character.getNumericValue(b);
 	}
 	*/
-
-	}
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

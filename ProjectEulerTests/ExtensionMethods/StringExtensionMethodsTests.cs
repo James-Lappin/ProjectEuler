@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using ProjectEuler.Utilities;
+﻿using NUnit.Framework;
+using ProjectEuler.ExtensionMethods;
 
 namespace ProjectEulerTests.Utilities
 {
-	public class StringExtensionMethodsTests
+    public class StringExtensionMethodsTests
 	{
 		[TestCase("\"Dave", "Dave")]
 		[TestCase("!@£$%^&*()_+=-{}][:';\\|?/><.,§±~`", "")]

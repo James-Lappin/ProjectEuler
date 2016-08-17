@@ -4,13 +4,13 @@ using ProjectEuler.Problems;
 
 namespace ProjectEuler.Utilities
 {
-	public class UnityUtility
+    public class UnityUtility
 	{
 		public static IUnityContainer RegisterTypes()
 		{
 			var container = new UnityContainer();
 			container.RegisterType<IFileUtility, FileUtility>();
-			container.RegisterType<IProblem, Problem022>();
+			container.RegisterType<IProblem, Problem150>();
 			return container;
 		}
 	}
