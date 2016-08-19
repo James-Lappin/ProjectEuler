@@ -91,7 +91,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Utilities\FileUtility.cs" />
     <Compile Include="ExtensionMethods\StringExtensions.cs" />
-    <Compile Include="Utilities\UnityUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\names.txt">
