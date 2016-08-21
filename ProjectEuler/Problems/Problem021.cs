@@ -1,42 +1,41 @@
+using ProjectEuler.ExtensionMethods;
 using ProjectEuler.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using ProjectEuler.ExtensionMethods;
 
 namespace ProjectEuler.Problems
 {
-	public class Problem021 : IProblem
-	{
-		//what happens if value is 0?
-		public int StartValue { get; set; } = 1;
-		public int MaxValue { get; set; } = 10000;
+    public class Problem021 : IProblem
+    {
+        //what happens if value is 0?
+        public int StartValue { get; set; } = 1;
 
-		//What happens if one of the values is over the max value but a pair with another value?
-		//e.g. max value 225
-		public string Solve()
-		{
-			var valuesSearched = new HashSet<int>();
-			var result = 0;
+        public int MaxValue { get; set; } = 10000;
 
-			for (var value = StartValue; value < MaxValue; value++)
-			{
-				if (valuesSearched.Contains(value)) { continue; }
+        //What happens if one of the values is over the max value but a pair with another value?
+        //e.g. max value 225
+        public string Solve()
+        {
+            var valuesSearched = new HashSet<int>();
+            var result = 0;
 
-				var pair = value.FindProperDivisors().Sum();
-				var pairsValue = pair.FindProperDivisors().Sum();
+            for (var value = StartValue; value < MaxValue; value++)
+            {
+                if (valuesSearched.Contains(value)) { continue; }
 
-				valuesSearched.Add(value);
-				valuesSearched.Add(pair);
+                var pair = value.FindProperDivisors().Sum();
+                var pairsValue = pair.FindProperDivisors().Sum();
 
-				if (pairsValue == pair || pairsValue != value) continue;
+                valuesSearched.Add(value);
+                valuesSearched.Add(pair);
 
-				result += pair;
-				result += pairsValue;
-			}
+                if (pairsValue == pair || pairsValue != value) continue;
 
-			return result.ToString();
-		}
+                result += pair;
+                result += pairsValue;
+            }
 
-
-	}
+            return result.ToString();
+        }
+    }
 }

@@ -1,19 +1,16 @@
-using Microsoft.Practices.Unity;
 using ProjectEuler.Interfaces;
-using ProjectEuler.Utilities;
+using ProjectEuler.Problems;
 using System;
 using System.Diagnostics;
 
 namespace ProjectEuler
 {
-	internal class Program
+    internal class Program
 	{
 		private static void Main(string[] args)
 		{
-			var container = UnityUtility.RegisterTypes();
-
 			var program = new Program();
-			program.SolveProblem(container.Resolve<IProblem>());
+			program.SolveProblem(new Problem150());
 
 			Console.WriteLine("Press any key to continue");
 			Console.ReadLine();

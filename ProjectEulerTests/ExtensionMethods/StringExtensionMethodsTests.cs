@@ -4,7 +4,7 @@ using ProjectEuler.Utilities;
 
 namespace ProjectEulerTests.ExtensionMethods
 {
-	public class StringExtensionMethodsTests
+    public class StringExtensionMethodsTests
 	{
 		[TestCase("\"Dave", "Dave")]
 		[TestCase("!@£$%^&*()_+=-{}][:';\\|?/><.,§±~`", "")]
