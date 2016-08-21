@@ -77,8 +77,10 @@
     <Compile Include="Problems\Problem021Tests.cs" />
     <Compile Include="Problems\Problem022Tests.cs" />
     <Compile Include="Problems\Problem023Tests.cs" />
+    <Compile Include="Problems\Problem025Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtensionMethods\StringExtensionMethodsTests.cs" />
+    <Compile Include="Utilities\FibonacciUtilityTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
