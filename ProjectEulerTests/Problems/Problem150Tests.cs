@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using ProjectEuler.Problems;
+using System.Linq;
 
 namespace ProjectEulerTests.Problems
 {
@@ -14,7 +15,7 @@ namespace ProjectEulerTests.Problems
         }
 
         [Test]
-        public void Single()
+        public void GetSmallestSubtriangleSum_Single()
         {
             //arrange
             var jaggedArray = new int[3][];
@@ -30,7 +31,7 @@ namespace ProjectEulerTests.Problems
         }
 
         [Test]
-        public void SmallTriganle()
+        public void GetSmallestSubtriangleSum_SmallTriganle()
         {
             //arrange
             var jaggedArray = new int[3][];
@@ -46,7 +47,7 @@ namespace ProjectEulerTests.Problems
         }
 
         [Test]
-        public void WholeTriangle()
+        public void GetSmallestSubtriangleSum_WholeTriangle()
         {
             //arrange
             var jaggedArray = new int[3][];
@@ -62,7 +63,7 @@ namespace ProjectEulerTests.Problems
         }
 
         [Test]
-        public void Multiple()
+        public void GetSmallestSubtriangleSum_Multiple()
         {
             //arrange
             var jaggedArray = new int[4][];
@@ -81,7 +82,7 @@ namespace ProjectEulerTests.Problems
         }
 
         [Test]
-        public void Example()
+        public void GetSmallestSubtriangleSum_Example()
         {
             //arrange
             var jaggedArray = new int[6][];
@@ -99,8 +100,46 @@ namespace ProjectEulerTests.Problems
             Assert.That(actual[0], Is.EqualTo(-42));
             Assert.That(actual[1], Is.EqualTo(-39));
             Assert.That(actual[2], Is.EqualTo(-26));
-            Assert.That(actual[3], Is.EqualTo(-26 ));
+            Assert.That(actual[3], Is.EqualTo(-26));
             Assert.That(actual[4], Is.EqualTo(-25));
+        }
+
+        [Test]
+        public void GenerateNumbers()
+        {
+            //act
+            var actual = _instance.GenerateNumbers(3).ToList();
+
+            //assert
+            Assert.That(actual, Has.Count.EqualTo(3));
+            Assert.That(actual[0], Is.EqualTo(273519));
+            Assert.That(actual[1], Is.EqualTo(-153582));
+            Assert.That(actual[2], Is.EqualTo(450905));
+        }
+
+        [Test]
+        public void TransformIntoJaggedArray()
+        {
+            //arrange
+            var numbers = Enumerable.Range(0, 6);
+
+            //act
+            var actual = _instance.TransformInToJaggedArray(numbers);
+
+            //assert
+            Assert.That(actual, Has.Length.EqualTo(3));
+
+            Assert.That(actual[0], Has.Length.EqualTo(1));
+            Assert.That(actual[0][0], Is.EqualTo(0));
+
+            Assert.That(actual[1], Has.Length.EqualTo(2));
+            Assert.That(actual[1][0], Is.EqualTo(1));
+            Assert.That(actual[1][1], Is.EqualTo(2));
+
+            Assert.That(actual[2], Has.Length.EqualTo(3));
+            Assert.That(actual[2][0], Is.EqualTo(3));
+            Assert.That(actual[2][1], Is.EqualTo(4));
+            Assert.That(actual[2][2], Is.EqualTo(5));
         }
     }
 }
