@@ -6,12 +6,22 @@ namespace ProjectEuler.Tests.ExtensionMethods
 {
     public class IntegerExtensionMethodsTests
     {
+        [Test, Explicit]
+        public void IsPrime_WhereLongRunning()
+        {
+            //arrange
+            //act
+            var actual = 2147483647.IsPrime();
+
+            //assert
+            Assert.That(actual);
+        }
+
         [TestCase(1, true)]
         [TestCase(43, true)]
         [TestCase(71, true)]
         [TestCase(1097, true)]
         [TestCase(100271, true)]
-        [TestCase(2147483647, true), Explicit]
         [TestCase(10, false)]
         [TestCase(57, false)]
         [TestCase(177, false)]
