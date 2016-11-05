@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using ProjectEuler.Problems;
+using ProjectEuler.Domain.Problems;
 
-namespace ProjectEulerTests.Problems
+namespace ProjectEuler.Tests.Problems
 {
 	[TestFixture]
 	public class Problem021Tests

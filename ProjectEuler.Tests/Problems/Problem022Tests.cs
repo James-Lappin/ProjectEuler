@@ -1,9 +1,9 @@
-﻿using NUnit.Framework;
-using ProjectEuler.Problems;
-using ProjectEuler.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
+using ProjectEuler.Domain.Problems;
+using ProjectEuler.Domain.Utilities;
 
-namespace ProjectEulerTests.Problems
+namespace ProjectEuler.Tests.Problems
 {
 	public class Problem022Tests
 	{

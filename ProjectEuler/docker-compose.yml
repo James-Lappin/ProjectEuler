@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  projecteuler:
+    image: user/projecteuler${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80"
