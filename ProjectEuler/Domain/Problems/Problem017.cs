@@ -1,8 +1,8 @@
-using ProjectEuler.Interfaces;
 using System;
 using System.Collections.Generic;
+using ProjectEuler.Domain.Interfaces;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Domain.Problems
 {
     //TODO a lot of similar code. Wonder if there's a design pattern to remove it?
     public class Problem017 : IProblem

@@ -1,8 +1,7 @@
-using ProjectEuler.Interfaces;
-using System;
 using System.Numerics;
+using ProjectEuler.Domain.Interfaces;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Domain.Problems
 {
 	public class Problem025 : IProblem
 	{

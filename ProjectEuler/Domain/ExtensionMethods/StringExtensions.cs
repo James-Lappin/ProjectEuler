@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ProjectEuler.ExtensionMethods
+namespace ProjectEuler.Domain.ExtensionMethods
 {
 	public static class StringExtensions
 	{

@@ -1,9 +1,9 @@
-﻿using NUnit.Framework;
-using ProjectEuler.Problems;
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
+using NUnit.Framework;
+using ProjectEuler.Domain.Problems;
 
-namespace ProjectEulerTests.Problems
+namespace ProjectEuler.Tests.Problems
 {
     public class Problem150Tests
     {

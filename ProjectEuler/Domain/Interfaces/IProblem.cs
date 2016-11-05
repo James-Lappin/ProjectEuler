@@ -1,4 +1,4 @@
-﻿namespace ProjectEuler.Interfaces
+﻿namespace ProjectEuler.Domain.Interfaces
 {
 	public interface IProblem
 	{

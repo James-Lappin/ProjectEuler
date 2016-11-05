@@ -1,10 +1,10 @@
-﻿using NUnit.Framework;
-using ProjectEuler.Utilities;
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
+using NUnit.Framework;
+using ProjectEuler.Domain.Utilities;
 
-namespace ProjectEulerTests.Utilities
+namespace ProjectEuler.Tests.Utilities
 {
 	public class FileUtilityTests
 	{

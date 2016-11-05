@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using ProjectEuler.Utilities;
+using ProjectEuler.Domain.Utilities;
 
-namespace ProjectEulerTests.Utilities
+namespace ProjectEuler.Tests.Utilities
 {
 	public class FibonacciUtilityTests
 	{

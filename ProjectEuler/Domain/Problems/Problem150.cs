@@ -1,10 +1,10 @@
-﻿using ProjectEuler.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using ProjectEuler.Domain.Interfaces;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Domain.Problems
 {
     public class Problem150 : IProblem
     {

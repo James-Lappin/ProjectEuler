@@ -1,8 +1,8 @@
-﻿using NUnit.Framework;
-using ProjectEuler.ExtensionMethods;
-using System.Linq;
+﻿using System.Linq;
+using NUnit.Framework;
+using ProjectEuler.Domain.ExtensionMethods;
 
-namespace ProjectEulerTests.ExtensionMethods
+namespace ProjectEuler.Tests.ExtensionMethods
 {
     public class IntegerExtensionMethodsTests
     {

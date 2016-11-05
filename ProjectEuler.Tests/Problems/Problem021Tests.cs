@@ -1,5 +1,4 @@
-﻿using NUnit.Core;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ProjectEuler.Problems;
 
 namespace ProjectEulerTests.Problems

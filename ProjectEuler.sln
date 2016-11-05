@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProjectEuler.Tests", "Tests\ProjectEuler.Tests.xproj", "{20ED2E4A-27D6-4591-B770-BECC6EE6B0BE}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProjectEuler.Tests", "ProjectEuler.Tests\ProjectEuler.Tests.xproj", "{20ED2E4A-27D6-4591-B770-BECC6EE6B0BE}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProjectEuler", "Euler\ProjectEuler.xproj", "{C16ED525-7289-4F9C-966C-D8A2D0BF7DA7}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProjectEuler", "ProjectEuler\ProjectEuler.xproj", "{C16ED525-7289-4F9C-966C-D8A2D0BF7DA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

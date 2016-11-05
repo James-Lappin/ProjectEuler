@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Domain.Problems
 {
     public class Problem9
     {

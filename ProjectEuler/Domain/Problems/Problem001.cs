@@ -1,6 +1,6 @@
-using ProjectEuler.Interfaces;
+using ProjectEuler.Domain.Interfaces;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Domain.Problems
 {
     public class Problem001 : IProblem
     {

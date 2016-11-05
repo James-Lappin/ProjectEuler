@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectEuler.Utilities
+namespace ProjectEuler.Domain.Utilities
 {
 	public class FibonacciUtility
 	{

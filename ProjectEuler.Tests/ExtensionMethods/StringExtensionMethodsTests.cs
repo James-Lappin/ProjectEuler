@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
-using ProjectEuler.ExtensionMethods;
-using ProjectEuler.Utilities;
+using ProjectEuler.Domain.ExtensionMethods;
 
-namespace ProjectEulerTests.ExtensionMethods
+namespace ProjectEuler.Tests.ExtensionMethods
 {
     public class StringExtensionMethodsTests
 	{

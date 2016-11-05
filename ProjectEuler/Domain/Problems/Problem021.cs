@@ -1,9 +1,8 @@
-using ProjectEuler.ExtensionMethods;
-using ProjectEuler.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
+using ProjectEuler.Domain.ExtensionMethods;
+using ProjectEuler.Domain.Interfaces;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Domain.Problems
 {
     public class Problem021 : IProblem
     {

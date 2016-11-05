@@ -1,6 +1,6 @@
-using ProjectEuler.ExtensionMethods;
+using ProjectEuler.Domain.ExtensionMethods;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Domain.Problems
 {
     public class Problem10
     {

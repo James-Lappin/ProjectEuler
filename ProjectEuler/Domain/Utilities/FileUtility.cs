@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ProjectEuler.Utilities
+namespace ProjectEuler.Domain.Utilities
 {
 	public class FileUtility : IFileUtility
 	{

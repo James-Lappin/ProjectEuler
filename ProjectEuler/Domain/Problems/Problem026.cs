@@ -1,8 +1,8 @@
-﻿using ProjectEuler.Interfaces;
-using System;
-using ProjectEuler.ExtensionMethods;
+﻿using System;
+using ProjectEuler.Domain.ExtensionMethods;
+using ProjectEuler.Domain.Interfaces;
 
-namespace ProjectEuler.Problems
+namespace ProjectEuler.Domain.Problems
 {
 	public class Problem026 : IProblem
 	{
