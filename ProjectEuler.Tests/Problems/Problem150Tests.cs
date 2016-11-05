@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Numerics;
 using NUnit.Framework;
 using ProjectEuler.Domain.Problems;
@@ -122,7 +123,7 @@ namespace ProjectEuler.Tests.Problems
         public void TransformIntoJaggedArray()
         {
             //arrange
-            var numbers = Enumerable.Range(0, 6).Cast<long>();
+            var numbers = Enumerable.Range(0, 6).Select(Convert.ToInt64);
 
             //act
             var actual = _instance.TransformInToJaggedArray(numbers);

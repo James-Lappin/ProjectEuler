@@ -1,8 +1,13 @@
 ﻿{
-  "version": "1.0.0-*",
-  "buildOptions": {
-    "debugType": "portable",
-  },
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "debugType": "portable",
+        "copyToOutput": {
+            "include": [
+                "Resources/**"
+            ]
+        }
+    },
     "dependencies": {
         "Newtonsoft.Json": "9.0.1",
         "System.Runtime.Serialization.Primitives": "4.1.1",
@@ -10,19 +15,19 @@
         "NUnit": "3.5.0",
         "ProjectEuler": "1.0.0-*"
     },
-  "testRunner": "nunit",
-  "frameworks": {
-    "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.1"
+    "testRunner": "nunit",
+    "frameworks": {
+        "netcoreapp1.0": {
+            "dependencies": {
+                "Microsoft.NETCore.App": {
+                    "type": "platform",
+                    "version": "1.0.1"
+                }
+            },
+            "imports": [
+                "dotnet5.4",
+                "portable-net451+win8"
+            ]
         }
-      },
-      "imports": [
-        "dotnet5.4",
-        "portable-net451+win8"
-      ]
     }
-  }
 }
