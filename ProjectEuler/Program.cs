@@ -1,31 +1,24 @@
-using ProjectEuler.Interfaces;
-using ProjectEuler.Problems;
-using System;
-using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 
-namespace ProjectEuler
+namespace Euler
 {
-    internal class Program
+    public class Program
     {
-        private static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var program = new Program();
-            program.SolveProblem(new Problem150());
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .Build();
 
-            Console.WriteLine("Press any key to continue");
-            Console.ReadLine();
-        }
-
-        private void SolveProblem(IProblem problem)
-        {
-            var stopwatch = new Stopwatch();
-
-            stopwatch.Start();
-            var result = problem.Solve();
-            stopwatch.Stop();
-
-            Console.WriteLine(result);
-            Console.WriteLine("Program took {0}ms to solve", stopwatch.ElapsedMilliseconds);
+            host.Run();
         }
     }
 }
