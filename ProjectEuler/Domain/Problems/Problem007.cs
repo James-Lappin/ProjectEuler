@@ -1,35 +1,26 @@
+using ProjectEuler.Domain.ExtensionMethods;
+using ProjectEuler.Domain.Interfaces;
+
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem7
+    public class Problem007 : IProblem
     {
-        public long Solve()
+        public string Solve()
         {
             int count = 0;
 
             for (long i = 2; i < 9223372036854775807L; i++)
             {
-                if (isPrime(i))
+                if (i.IsPrime())
                 {
                     count++;
                     if (count == 10001)
                     {
-                        return i;
+                        return i.ToString();
                     }
                 }
             }
-            return 0;
-        }
-
-        public bool isPrime(long p)
-        {
-            for (long n = 2; n < p; n++)
-            {
-                if (p % n == 0)
-                {
-                    return false;
-                }
-            }
-            return true;
+            return 0.ToString();
         }
     }
 }

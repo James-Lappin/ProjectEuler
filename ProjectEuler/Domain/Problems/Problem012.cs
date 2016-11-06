@@ -1,8 +1,10 @@
+using ProjectEuler.Domain.Interfaces;
+
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem12
+    public class Problem012 : IProblem
     {
-        public int Solve()
+        public string Solve()
         {
             int result = 0;
             int highestDividor = 0;
@@ -23,14 +25,13 @@ namespace ProjectEuler.Domain.Problems
                 {
                     highestDividor = dave;
                 }
-                //System.out.println(triangleNumber + " " + Problem12.CountDivisors(triangleNumber) + " " + highestDividor);
             }
-            return result;
+            return result.ToString();
         }
 
         private int CountDivisors(int number)
         {
-            int result = 2;
+            var result = 2;
             int limit;
 
             if (number % 2 == 0) limit = number / 2;
@@ -39,7 +40,7 @@ namespace ProjectEuler.Domain.Problems
                 limit = (number - 1) / 2;
             }
 
-            for (int i = 2; i <= limit; i++)
+            for (var i = 2; i <= limit; i++)
             {
                 if (number % i == 0) result++;
             }

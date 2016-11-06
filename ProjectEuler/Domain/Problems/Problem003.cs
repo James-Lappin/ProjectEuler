@@ -1,6 +1,6 @@
 namespace ProjectEuler.Domain.Problems
 {
-    public class problem3
+    public class Problem003
     {
         public long solveProblem3()
         {

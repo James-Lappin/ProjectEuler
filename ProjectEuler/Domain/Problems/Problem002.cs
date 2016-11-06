@@ -1,6 +1,6 @@
 namespace ProjectEuler.Domain.Problems
 {
-    public class problem2
+    public class Problem002
     {
         public int solveProblem2()
         {

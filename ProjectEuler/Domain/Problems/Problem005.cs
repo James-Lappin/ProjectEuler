@@ -1,10 +1,12 @@
+using ProjectEuler.Domain.Interfaces;
+
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem5
+    public class Problem005 : IProblem
     {
-        public void Solve()
+        public string Solve()
         {
-            //Ask Chloe
+            return "Ask Chloe";
         }
     }
 }

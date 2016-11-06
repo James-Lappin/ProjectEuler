@@ -10,7 +10,7 @@ namespace ProjectEuler.Domain.Problems
 {
     public class Problem022 : IProblem
     {
-        private string FileName => Directory.GetCurrentDirectory() + "../Resources/names.txt";
+        private static string FileName => Path.Combine(Directory.GetCurrentDirectory(), "..", "Resources", "names.txt");
         private IFileUtility FileUtility { get; set; }
 
         public Problem022(IFileUtility fileUtility)

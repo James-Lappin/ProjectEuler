@@ -1,29 +1,31 @@
+using ProjectEuler.Domain.Interfaces;
+
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem4
+    public class Problem004 : IProblem
     {
-        public int Solve()
+        public string Solve()
         {
-            int result = 0;
+            var result = 0;
 
-            for (int i = 999; i > 101; i--)
+            for (var i = 999; i > 101; i--)
             {
-                for (int j = 999; j > 101; j--)
+                for (var j = 999; j > 101; j--)
                 {
-                    int number = i * j;
-                    if (number == reverseInt(number) && number > result)
+                    var number = i * j;
+                    if (number == ReverseInt(number) && number > result)
                     {
                         result = number;
                     }
                 }
             }
 
-            return result;
+            return result.ToString();
         }
 
-        public int reverseInt(int input)
+        public int ReverseInt(int input)
         {
-            string dave = input.ToString();
+            var dave = input.ToString();
 
             throw new System.NotImplementedException();
             //return int.Parse(new StringBuilder(dave).Reverse().toString());

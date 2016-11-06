@@ -1,6 +1,8 @@
+using ProjectEuler.Domain.Interfaces;
+
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem16
+    public class Problem016 : IProblem
     {
         public string Solve()
         {
@@ -9,24 +11,24 @@ namespace ProjectEuler.Domain.Problems
         }
 
         /*
-	public int Solve()
-	{
-		BigInteger twoToThePower = new BigInteger("2");
+    public int Solve()
+    {
+        BigInteger twoToThePower = new BigInteger("2");
 
-		for (int i = 1; i < 1000; i++)
-		{
-			BigInteger Two = new BigInteger("2");
-			twoToThePower = twoToThePower.multiply(Two);
-		}
+        for (int i = 1; i < 1000; i++)
+        {
+            BigInteger Two = new BigInteger("2");
+            twoToThePower = twoToThePower.multiply(Two);
+        }
 
-		String dave = twoToThePower.toString();
-		int result = Character.getNumericValue(dave.charAt(0));
-		for (int i = 1; i < dave.Length(); i++)
-		{
-			result = result + Character.getNumericValue(dave.charAt(i));
-		}
+        String dave = twoToThePower.toString();
+        int result = Character.getNumericValue(dave.charAt(0));
+        for (int i = 1; i < dave.Length(); i++)
+        {
+            result = result + Character.getNumericValue(dave.charAt(i));
+        }
 
-		return result;
-	}*/
+        return result;
+    }*/
     }
 }

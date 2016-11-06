@@ -1,10 +1,11 @@
 using ProjectEuler.Domain.ExtensionMethods;
+using ProjectEuler.Domain.Interfaces;
 
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem10
+    public class Problem010 : IProblem
     {
-        public long Solve()
+        public string Solve()
         {
             long result = 0;
             for (int i = 2; i < 2000000; i++)
@@ -14,7 +15,7 @@ namespace ProjectEuler.Domain.Problems
                     result = result + i;
                 }
             }
-            return result;
+            return result.ToString();
         }
     }
 }

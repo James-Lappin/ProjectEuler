@@ -4,60 +4,72 @@ using System.Linq;
 
 namespace ProjectEuler.Domain.ExtensionMethods
 {
-	public static class IntergerExtensionMethods
-	{
-		//maybe quicker to use Sieve of Eratosthenes and store?
-		public static bool IsPrime(this int value)
-		{
-			for (long i = 2; i < value; i++)
-			{
-				if (value % i == 0)
-				{
-					return false;
-				}
-			}
-			return true;
-		}
+    public static class IntergerExtensionMethods
+    {
+        //maybe quicker to use Sieve of Eratosthenes and store?
+        public static bool IsPrime(this int value)
+        {
+            for (long i = 2; i < value; i++)
+            {
+                if (value % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
-		public static IEnumerable<int> FindDivisors(this int number)
-		{
-			var result = new HashSet<int>();
-			var limit = Math.Sqrt(number);
+        public static bool IsPrime(this long value)
+        {
+            for (long i = 2; i < value; i++)
+            {
+                if (value % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
-			for (var i = 1; i <= limit; i++)
-			{
-				if (number % i != 0) continue;
-				result.Add(i);
+        public static IEnumerable<int> FindDivisors(this int number)
+        {
+            var result = new HashSet<int>();
+            var limit = Math.Sqrt(number);
 
-				var reflectedDivisor = number / i;
-				if (reflectedDivisor != i) { result.Add(reflectedDivisor); }
-			}
+            for (var i = 1; i <= limit; i++)
+            {
+                if (number % i != 0) continue;
+                result.Add(i);
 
-			return result;
-		}
+                var reflectedDivisor = number / i;
+                if (reflectedDivisor != i) { result.Add(reflectedDivisor); }
+            }
 
-		public static IEnumerable<int> FindProperDivisors(this int number)
-		{
-			return number.FindDivisors().Where(x => x != number);
-		}
+            return result;
+        }
 
-		//Will only give accurate results to n less than 20
-		public static long Factorial(this int n)
-		{
-			if (n > 20) throw new Exception("Value of n is to big for this function, will have to make it a BigInteger instead of long");
+        public static IEnumerable<int> FindProperDivisors(this int number)
+        {
+            return number.FindDivisors().Where(x => x != number);
+        }
 
-			long result = 1;
-			for (var i = 1; i <= n; i++)
-			{
-				result *= i;
-			}
+        //Will only give accurate results to n less than 20
+        public static long Factorial(this int n)
+        {
+            if (n > 20) throw new Exception("Value of n is to big for this function, will have to make it a BigInteger instead of long");
 
-			return result;
-		}
+            long result = 1;
+            for (var i = 1; i <= n; i++)
+            {
+                result *= i;
+            }
 
-		public static bool IsAbundantNumber(this int number)
-		{
-			return number.FindProperDivisors().Sum() > number;
-		}
-	}
+            return result;
+        }
+
+        public static bool IsAbundantNumber(this int number)
+        {
+            return number.FindProperDivisors().Sum() > number;
+        }
+    }
 }

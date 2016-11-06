@@ -1,12 +1,15 @@
+using ProjectEuler.Domain.Interfaces;
+
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem18
+    public class Problem018 : IProblem
     {
-        public int Solve()
+        public string Solve()
         {
-            int result = 0;
+            var result = 0;
 
-            int[][] dave = new int[][]{
+            var dave = new[]
+            {
                 new [] {75},
                 new [] {95, 64},
                 new [] {17, 47, 82},
@@ -52,7 +55,7 @@ namespace ProjectEuler.Domain.Problems
             //	System.out.println(maxResult[i]);
             //}
 
-            return result;
+            return result.ToString();
         }
     }
 }

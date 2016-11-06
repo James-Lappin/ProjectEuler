@@ -1,11 +1,13 @@
+using ProjectEuler.Domain.Interfaces;
+
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem11
+    public class Problem011 : IProblem
     {
-        public int Solve()
+        public string Solve()
         {
-            int result = 0;
-            int[][] dave = new int[][]
+            var result = 0;
+            var dave = new int[][]
             {
                 new [] {8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 8},
                 new [] {49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 04, 56, 62, 00},
@@ -30,7 +32,7 @@ namespace ProjectEuler.Domain.Problems
             };
 
             //horizontal
-            for (int i = 3; i < 20; i++)
+            for (var i = 3; i < 20; i++)
             {
                 for (int j = 0; j < 20; j++)
                 {
@@ -68,7 +70,7 @@ namespace ProjectEuler.Domain.Problems
                 }
             }
 
-            return result;
+            return result.ToString();
         }
     }
 }

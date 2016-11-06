@@ -1,8 +1,10 @@
+using ProjectEuler.Domain.Interfaces;
+
 namespace ProjectEuler.Domain.Problems
 {
-    public class Problem14
+    public class Problem014 : IProblem
     {
-        public int Solve()
+        public string Solve()
         {
             int result = 0;
             int biggestCount = 0;
@@ -39,7 +41,7 @@ namespace ProjectEuler.Domain.Problems
                 }
             }
 
-            return result;
+            return result.ToString();
         }
     }
 }
