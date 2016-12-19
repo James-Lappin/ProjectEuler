@@ -9,7 +9,7 @@ namespace ProjectEuler.Domain.Problems
 {
     public class Problem150 : IProblem
     {
-        protected internal int Rows { get; set; } = 1000;
+        public int Rows { get; set; } = 1000;
 
         public string Solve()
         {
@@ -46,7 +46,7 @@ namespace ProjectEuler.Domain.Problems
             return rowSums;
         }
 
-        protected internal int[][] GenerateTriangle(int rows)
+        public int[][] GenerateTriangle(int rows)
         {
             var rand = new LinearCongruentialGenerator();
             var triangle = new int[rows][];
