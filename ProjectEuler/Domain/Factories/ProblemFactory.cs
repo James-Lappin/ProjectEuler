@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using ProjectEuler.Domain.Interfaces;
 using ProjectEuler.Domain.Problems;
@@ -21,6 +22,16 @@ namespace ProjectEuler.Domain.Factories
             }
             
             return Activator.CreateInstance(type) as IProblem ?? new NullProblem();
+        }
+
+        public static IEnumerable<string> GetAllProblems()
+        {
+            var type = typeof(IProblem);
+
+            return Assembly.GetEntryAssembly().GetTypes()
+                .Where(p => type.IsAssignableFrom(p))
+                .Select(x => x.Name.Substring(6));
+                
         }
     }
 }

@@ -37,6 +37,14 @@ namespace ProjectEuler.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Problem()
+        {
+            var allProblems = ProblemFactory.GetAllProblems();
+
+            return View(allProblems);
+        }
+
         public string Problem(int problemNumber)
         {
             _logger.LogDebug($"problemNumer: {problemNumber}");
