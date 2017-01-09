@@ -17,18 +17,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjectEuler\ProjectEuler.csproj" />
-    <ProjectReference Include="..\src\ProjectEuler\ProjectEuler.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk">
-      <Version>15.0.0-preview-20161024-02</Version>
-    </PackageReference>
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="15.0.0-preview-20170106-08" />
     <PackageReference Include="Newtonsoft.Json">
       <Version>9.0.1</Version>
     </PackageReference>
+    <PackageReference Include="NUnit.Console" Version="3.5.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.6.0" />
     <PackageReference Include="System.Runtime.Serialization.Primitives">
-      <Version>4.1.1</Version>
+      <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="dotnet-test-nunit">
       <Version>3.4.0-beta-3</Version>
@@ -42,7 +38,13 @@
       <Version>1.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\ProjectEuler\ProjectEuler.csproj" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputType>exe</OutputType>
   </PropertyGroup>
 </Project>

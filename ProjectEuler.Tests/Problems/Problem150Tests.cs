@@ -6,6 +6,7 @@ using ProjectEuler.Domain.Problems;
 
 namespace ProjectEuler.Tests.Problems
 {
+    [TestFixture]
     public class Problem150Tests
     {
         private Problem150 _instance;

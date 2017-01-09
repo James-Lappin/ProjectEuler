@@ -9,14 +9,7 @@ namespace ProjectEuler.Domain.ExtensionMethods
         //maybe quicker to use Sieve of Eratosthenes and store?
         public static bool IsPrime(this int value)
         {
-            for (long i = 2; i < value; i++)
-            {
-                if (value % i == 0)
-                {
-                    return false;
-                }
-            }
-            return true;
+            return IsPrime((long) value);
         }
 
         public static bool IsPrime(this long value)
